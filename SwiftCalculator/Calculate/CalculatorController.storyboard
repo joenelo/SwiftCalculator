@@ -1,0 +1,339 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13771" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="HPP-w8-Y8T">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13772"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <customFonts key="customFonts">
+        <array key="AvenirNext.ttc">
+            <string>AvenirNext-DemiBold</string>
+            <string>AvenirNext-Medium</string>
+        </array>
+    </customFonts>
+    <scenes>
+        <!--Calculator Controller-->
+        <scene sceneID="FSU-B0-nvq">
+            <objects>
+                <viewController id="HPP-w8-Y8T" userLabel="Calculator Controller" customClass="CalculatorController" customModule="SwiftCalculator" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="Lvb-v6-hMp">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="zgp-ws-Eqt">
+                                <rect key="frame" x="284" y="25" width="71" height="37"/>
+                                <fontDescription key="fontDescription" name="AvenirNext-DemiBold" family="Avenir Next" pointSize="18"/>
+                                <state key="normal" title="Clear All">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </state>
+                                <connections>
+                                    <action selector="clearButton:" destination="HPP-w8-Y8T" eventType="touchUpInside" id="P8G-8w-I3d"/>
+                                </connections>
+                            </button>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" scrollEnabled="NO" editable="NO" textAlignment="right" selectable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5Vp-Vp-1Zs">
+                                <rect key="frame" x="0.0" y="70" width="375" height="75"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="75" id="eNV-uQ-GaD"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="AvenirNext-Medium" family="Avenir Next" pointSize="40"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                            </textView>
+                            <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="30" translatesAutoresizingMaskIntoConstraints="NO" id="vDB-E1-B90">
+                                <rect key="frame" x="36" y="168.5" width="303" height="88"/>
+                                <subviews>
+                                    <button opaque="NO" tag="8" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="uDn-zy-N8t" customClass="RoundButtons" customModule="SwiftCalculator" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="0.0" width="81" height="88"/>
+                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <fontDescription key="fontDescription" name="AvenirNext-Medium" family="Avenir Next" pointSize="30"/>
+                                        <state key="normal" title="7">
+                                            <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        </state>
+                                        <userDefinedRuntimeAttributes>
+                                            <userDefinedRuntimeAttribute type="boolean" keyPath="roundButton" value="YES"/>
+                                        </userDefinedRuntimeAttributes>
+                                        <connections>
+                                            <action selector="numbers:" destination="HPP-w8-Y8T" eventType="touchUpInside" id="1sa-4Q-JRs"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" tag="9" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Ro7-lc-mPa" customClass="RoundButtons" customModule="SwiftCalculator" customModuleProvider="target">
+                                        <rect key="frame" x="111" y="0.0" width="81" height="88"/>
+                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <fontDescription key="fontDescription" name="AvenirNext-Medium" family="Avenir Next" pointSize="30"/>
+                                        <state key="normal" title="8">
+                                            <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        </state>
+                                        <userDefinedRuntimeAttributes>
+                                            <userDefinedRuntimeAttribute type="boolean" keyPath="roundButton" value="YES"/>
+                                        </userDefinedRuntimeAttributes>
+                                        <connections>
+                                            <action selector="numbers:" destination="HPP-w8-Y8T" eventType="touchUpInside" id="Y88-No-iNN"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" tag="10" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="g0p-02-tL4" customClass="RoundButtons" customModule="SwiftCalculator" customModuleProvider="target">
+                                        <rect key="frame" x="222" y="0.0" width="81" height="88"/>
+                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <fontDescription key="fontDescription" name="AvenirNext-Medium" family="Avenir Next" pointSize="30"/>
+                                        <state key="normal" title="9">
+                                            <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        </state>
+                                        <userDefinedRuntimeAttributes>
+                                            <userDefinedRuntimeAttribute type="boolean" keyPath="roundButton" value="YES"/>
+                                        </userDefinedRuntimeAttributes>
+                                        <connections>
+                                            <action selector="numbers:" destination="HPP-w8-Y8T" eventType="touchUpInside" id="ZVc-T8-Uss"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="88" id="Sa1-ma-mT7"/>
+                                </constraints>
+                            </stackView>
+                            <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="30" translatesAutoresizingMaskIntoConstraints="NO" id="Xdb-al-T9P">
+                                <rect key="frame" x="36" y="271.5" width="303" height="88"/>
+                                <subviews>
+                                    <button opaque="NO" tag="5" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="7Tg-I9-5sE" customClass="RoundButtons" customModule="SwiftCalculator" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="0.0" width="81" height="88"/>
+                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <fontDescription key="fontDescription" name="AvenirNext-Medium" family="Avenir Next" pointSize="30"/>
+                                        <state key="normal" title="4">
+                                            <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        </state>
+                                        <userDefinedRuntimeAttributes>
+                                            <userDefinedRuntimeAttribute type="boolean" keyPath="roundButton" value="YES"/>
+                                        </userDefinedRuntimeAttributes>
+                                        <connections>
+                                            <action selector="numbers:" destination="HPP-w8-Y8T" eventType="touchUpInside" id="lOc-Zr-HA4"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" tag="6" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="fxk-0h-IFg" customClass="RoundButtons" customModule="SwiftCalculator" customModuleProvider="target">
+                                        <rect key="frame" x="111" y="0.0" width="81" height="88"/>
+                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <fontDescription key="fontDescription" name="AvenirNext-Medium" family="Avenir Next" pointSize="30"/>
+                                        <state key="normal" title="5">
+                                            <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        </state>
+                                        <userDefinedRuntimeAttributes>
+                                            <userDefinedRuntimeAttribute type="boolean" keyPath="roundButton" value="YES"/>
+                                        </userDefinedRuntimeAttributes>
+                                        <connections>
+                                            <action selector="numbers:" destination="HPP-w8-Y8T" eventType="touchUpInside" id="bw6-fU-Nts"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" tag="7" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hx7-e7-5iY" customClass="RoundButtons" customModule="SwiftCalculator" customModuleProvider="target">
+                                        <rect key="frame" x="222" y="0.0" width="81" height="88"/>
+                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <fontDescription key="fontDescription" name="AvenirNext-Medium" family="Avenir Next" pointSize="30"/>
+                                        <state key="normal" title="6">
+                                            <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        </state>
+                                        <userDefinedRuntimeAttributes>
+                                            <userDefinedRuntimeAttribute type="boolean" keyPath="roundButton" value="YES"/>
+                                        </userDefinedRuntimeAttributes>
+                                        <connections>
+                                            <action selector="numbers:" destination="HPP-w8-Y8T" eventType="touchUpInside" id="k8P-tm-UWG"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="88" id="B8C-4D-44K"/>
+                                </constraints>
+                            </stackView>
+                            <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="30" translatesAutoresizingMaskIntoConstraints="NO" id="k4I-Dk-uGM">
+                                <rect key="frame" x="36" y="374.5" width="303" height="88"/>
+                                <subviews>
+                                    <button opaque="NO" tag="2" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="s5A-Eq-4ud" customClass="RoundButtons" customModule="SwiftCalculator" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="0.0" width="81" height="88"/>
+                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <fontDescription key="fontDescription" name="AvenirNext-Medium" family="Avenir Next" pointSize="30"/>
+                                        <state key="normal" title="1">
+                                            <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        </state>
+                                        <userDefinedRuntimeAttributes>
+                                            <userDefinedRuntimeAttribute type="boolean" keyPath="roundButton" value="YES"/>
+                                        </userDefinedRuntimeAttributes>
+                                        <connections>
+                                            <action selector="numbers:" destination="HPP-w8-Y8T" eventType="touchUpInside" id="cxM-p4-YBv"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" tag="3" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="glR-dz-O05" customClass="RoundButtons" customModule="SwiftCalculator" customModuleProvider="target">
+                                        <rect key="frame" x="111" y="0.0" width="81" height="88"/>
+                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <fontDescription key="fontDescription" name="AvenirNext-Medium" family="Avenir Next" pointSize="30"/>
+                                        <state key="normal" title="2">
+                                            <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        </state>
+                                        <userDefinedRuntimeAttributes>
+                                            <userDefinedRuntimeAttribute type="boolean" keyPath="roundButton" value="YES"/>
+                                        </userDefinedRuntimeAttributes>
+                                        <connections>
+                                            <action selector="numbers:" destination="HPP-w8-Y8T" eventType="touchUpInside" id="Fzu-VD-uHV"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" tag="4" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Hcx-Gb-tZf" customClass="RoundButtons" customModule="SwiftCalculator" customModuleProvider="target">
+                                        <rect key="frame" x="222" y="0.0" width="81" height="88"/>
+                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <fontDescription key="fontDescription" name="AvenirNext-Medium" family="Avenir Next" pointSize="30"/>
+                                        <state key="normal" title="3">
+                                            <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        </state>
+                                        <userDefinedRuntimeAttributes>
+                                            <userDefinedRuntimeAttribute type="boolean" keyPath="roundButton" value="YES"/>
+                                        </userDefinedRuntimeAttributes>
+                                        <connections>
+                                            <action selector="numbers:" destination="HPP-w8-Y8T" eventType="touchUpInside" id="TTT-CP-FiV"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="88" id="yDc-ej-MfW"/>
+                                </constraints>
+                            </stackView>
+                            <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="24" translatesAutoresizingMaskIntoConstraints="NO" id="goM-gG-Rpz">
+                                <rect key="frame" x="45" y="595.5" width="285" height="56"/>
+                                <subviews>
+                                    <button opaque="NO" tag="11" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="3BU-yZ-5U3" customClass="RoundButtons" customModule="SwiftCalculator" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="0.0" width="53.5" height="56"/>
+                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <fontDescription key="fontDescription" name="AvenirNext-Medium" family="Avenir Next" pointSize="40"/>
+                                        <state key="normal" title="+">
+                                            <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        </state>
+                                        <userDefinedRuntimeAttributes>
+                                            <userDefinedRuntimeAttribute type="boolean" keyPath="roundButton" value="YES"/>
+                                        </userDefinedRuntimeAttributes>
+                                        <connections>
+                                            <action selector="mathButtons:" destination="HPP-w8-Y8T" eventType="touchUpInside" id="bI3-A1-YHf"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" tag="12" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="l36-78-UqM" customClass="RoundButtons" customModule="SwiftCalculator" customModuleProvider="target">
+                                        <rect key="frame" x="77.5" y="0.0" width="53" height="56"/>
+                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <fontDescription key="fontDescription" name="AvenirNext-Medium" family="Avenir Next" pointSize="40"/>
+                                        <state key="normal" title="-">
+                                            <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        </state>
+                                        <userDefinedRuntimeAttributes>
+                                            <userDefinedRuntimeAttribute type="boolean" keyPath="roundButton" value="YES"/>
+                                        </userDefinedRuntimeAttributes>
+                                        <connections>
+                                            <action selector="mathButtons:" destination="HPP-w8-Y8T" eventType="touchUpInside" id="Mnt-4I-rxp"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" tag="13" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="JJk-YD-i2V" customClass="RoundButtons" customModule="SwiftCalculator" customModuleProvider="target">
+                                        <rect key="frame" x="154.5" y="0.0" width="53.5" height="56"/>
+                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <fontDescription key="fontDescription" name="AvenirNext-Medium" family="Avenir Next" pointSize="40"/>
+                                        <state key="normal" title="*">
+                                            <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        </state>
+                                        <userDefinedRuntimeAttributes>
+                                            <userDefinedRuntimeAttribute type="boolean" keyPath="roundButton" value="YES"/>
+                                        </userDefinedRuntimeAttributes>
+                                        <connections>
+                                            <action selector="mathButtons:" destination="HPP-w8-Y8T" eventType="touchUpInside" id="MtV-us-Ybw"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" tag="14" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="KJH-ae-14I" customClass="RoundButtons" customModule="SwiftCalculator" customModuleProvider="target">
+                                        <rect key="frame" x="232" y="0.0" width="53" height="56"/>
+                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <fontDescription key="fontDescription" name="AvenirNext-Medium" family="Avenir Next" pointSize="40"/>
+                                        <state key="normal" title="/">
+                                            <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        </state>
+                                        <userDefinedRuntimeAttributes>
+                                            <userDefinedRuntimeAttribute type="boolean" keyPath="roundButton" value="YES"/>
+                                        </userDefinedRuntimeAttributes>
+                                        <connections>
+                                            <action selector="mathButtons:" destination="HPP-w8-Y8T" eventType="touchUpInside" id="uXB-so-1yV"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="56" id="Jtm-ge-nzT"/>
+                                </constraints>
+                            </stackView>
+                            <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="30" translatesAutoresizingMaskIntoConstraints="NO" id="p6g-Fd-6Pw">
+                                <rect key="frame" x="36" y="477.5" width="303" height="88"/>
+                                <subviews>
+                                    <button opaque="NO" tag="1" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Y6F-ve-HUe" customClass="RoundButtons" customModule="SwiftCalculator" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="0.0" width="81" height="88"/>
+                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <fontDescription key="fontDescription" name="AvenirNext-Medium" family="Avenir Next" pointSize="30"/>
+                                        <state key="normal" title="0">
+                                            <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        </state>
+                                        <userDefinedRuntimeAttributes>
+                                            <userDefinedRuntimeAttribute type="boolean" keyPath="roundButton" value="YES"/>
+                                        </userDefinedRuntimeAttributes>
+                                        <connections>
+                                            <action selector="numbers:" destination="HPP-w8-Y8T" eventType="touchUpInside" id="MEu-ss-0LT"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="zVG-ok-2o8">
+                                        <rect key="frame" x="111" y="0.0" width="81" height="88"/>
+                                        <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <fontDescription key="fontDescription" name="AvenirNext-Medium" family="Avenir Next" pointSize="30"/>
+                                        <state key="normal">
+                                            <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        </state>
+                                    </button>
+                                    <button opaque="NO" tag="15" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="vbc-NQ-q3t" customClass="RoundButtons" customModule="SwiftCalculator" customModuleProvider="target">
+                                        <rect key="frame" x="222" y="0.0" width="81" height="88"/>
+                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <fontDescription key="fontDescription" name="AvenirNext-Medium" family="Avenir Next" pointSize="30"/>
+                                        <state key="normal" title="=">
+                                            <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        </state>
+                                        <userDefinedRuntimeAttributes>
+                                            <userDefinedRuntimeAttribute type="boolean" keyPath="roundButton" value="YES"/>
+                                        </userDefinedRuntimeAttributes>
+                                        <connections>
+                                            <action selector="mathButtons:" destination="HPP-w8-Y8T" eventType="touchUpInside" id="dJb-6A-8QS"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="88" id="qja-F2-OdG"/>
+                                </constraints>
+                            </stackView>
+                        </subviews>
+                        <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="p6g-Fd-6Pw" firstAttribute="top" secondItem="k4I-Dk-uGM" secondAttribute="bottom" constant="15" id="2S8-3a-Gp6"/>
+                            <constraint firstItem="5Vp-Vp-1Zs" firstAttribute="top" secondItem="UIg-pQ-wjV" secondAttribute="top" constant="50" id="BQX-l6-uqe"/>
+                            <constraint firstItem="UIg-pQ-wjV" firstAttribute="trailing" secondItem="5Vp-Vp-1Zs" secondAttribute="trailing" id="Dpi-Gu-WzF"/>
+                            <constraint firstItem="p6g-Fd-6Pw" firstAttribute="leading" secondItem="UIg-pQ-wjV" secondAttribute="leading" constant="36" id="Ekh-wF-t0l"/>
+                            <constraint firstItem="goM-gG-Rpz" firstAttribute="leading" secondItem="UIg-pQ-wjV" secondAttribute="leading" constant="45" id="FxP-7b-qTe"/>
+                            <constraint firstItem="vDB-E1-B90" firstAttribute="top" secondItem="5Vp-Vp-1Zs" secondAttribute="bottom" constant="23.5" id="KTC-ZA-Knq"/>
+                            <constraint firstItem="UIg-pQ-wjV" firstAttribute="trailing" secondItem="vDB-E1-B90" secondAttribute="trailing" constant="36" id="P7X-TB-z3U"/>
+                            <constraint firstItem="Xdb-al-T9P" firstAttribute="top" secondItem="vDB-E1-B90" secondAttribute="bottom" constant="15" id="Pfi-Od-Deh"/>
+                            <constraint firstItem="UIg-pQ-wjV" firstAttribute="trailing" secondItem="p6g-Fd-6Pw" secondAttribute="trailing" constant="36" id="Pqi-i5-08S"/>
+                            <constraint firstItem="vDB-E1-B90" firstAttribute="leading" secondItem="UIg-pQ-wjV" secondAttribute="leading" constant="36" id="QSU-2a-Urq"/>
+                            <constraint firstItem="UIg-pQ-wjV" firstAttribute="trailing" secondItem="goM-gG-Rpz" secondAttribute="trailing" constant="45" id="SVU-6e-bwN"/>
+                            <constraint firstItem="5Vp-Vp-1Zs" firstAttribute="leading" secondItem="Lvb-v6-hMp" secondAttribute="leading" id="XFG-CV-1ND"/>
+                            <constraint firstItem="UIg-pQ-wjV" firstAttribute="trailing" secondItem="Xdb-al-T9P" secondAttribute="trailing" constant="36" id="YUE-FP-MGd"/>
+                            <constraint firstItem="goM-gG-Rpz" firstAttribute="top" secondItem="p6g-Fd-6Pw" secondAttribute="bottom" constant="30" id="eWq-qo-nHb"/>
+                            <constraint firstItem="zgp-ws-Eqt" firstAttribute="top" secondItem="UIg-pQ-wjV" secondAttribute="top" constant="5" id="fk6-0s-HKy"/>
+                            <constraint firstItem="k4I-Dk-uGM" firstAttribute="leading" secondItem="UIg-pQ-wjV" secondAttribute="leading" constant="36" id="ir6-vb-G4q"/>
+                            <constraint firstItem="UIg-pQ-wjV" firstAttribute="trailing" secondItem="k4I-Dk-uGM" secondAttribute="trailing" constant="36" id="rmr-wO-UcO"/>
+                            <constraint firstItem="k4I-Dk-uGM" firstAttribute="top" secondItem="Xdb-al-T9P" secondAttribute="bottom" constant="15" id="xyW-sy-8v3"/>
+                            <constraint firstItem="Xdb-al-T9P" firstAttribute="leading" secondItem="UIg-pQ-wjV" secondAttribute="leading" constant="36" id="ytH-Nx-n8b"/>
+                            <constraint firstItem="UIg-pQ-wjV" firstAttribute="trailing" secondItem="zgp-ws-Eqt" secondAttribute="trailing" constant="20" id="z5p-q1-ctj"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="UIg-pQ-wjV"/>
+                    </view>
+                    <connections>
+                        <outlet property="answerTextView" destination="5Vp-Vp-1Zs" id="czb-24-tBy"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="DGy-p9-dk0" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="116" y="81.409295352323838"/>
+        </scene>
+    </scenes>
+</document>

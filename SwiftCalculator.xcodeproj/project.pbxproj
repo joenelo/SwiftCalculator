@@ -8,20 +8,20 @@
 
 /* Begin PBXBuildFile section */
 		E813561920857158008A6927 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E813561820857158008A6927 /* AppDelegate.swift */; };
-		E813561B20857158008A6927 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E813561A20857158008A6927 /* ViewController.swift */; };
-		E813561E20857158008A6927 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E813561C20857158008A6927 /* Main.storyboard */; };
 		E813562020857158008A6927 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E813561F20857158008A6927 /* Assets.xcassets */; };
 		E813562320857158008A6927 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E813562120857158008A6927 /* LaunchScreen.storyboard */; };
+		E81356332085A595008A6927 /* CalculatorController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E81356322085A595008A6927 /* CalculatorController.storyboard */; };
+		E81356352085A5A2008A6927 /* CalculatorController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E81356342085A5A2008A6927 /* CalculatorController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		E813561520857157008A6927 /* SwiftCalculator.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SwiftCalculator.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		E813561820857158008A6927 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		E813561A20857158008A6927 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
-		E813561D20857158008A6927 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		E813561F20857158008A6927 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		E813562220857158008A6927 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		E813562420857159008A6927 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		E81356322085A595008A6927 /* CalculatorController.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = CalculatorController.storyboard; sourceTree = "<group>"; };
+		E81356342085A5A2008A6927 /* CalculatorController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalculatorController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -54,14 +54,38 @@
 		E813561720857157008A6927 /* SwiftCalculator */ = {
 			isa = PBXGroup;
 			children = (
+				E81356302085A494008A6927 /* AppDelegate */,
+				E81356362085A5E3008A6927 /* Calculate */,
+				E81356312085A4C5008A6927 /* Utilities */,
+			);
+			path = SwiftCalculator;
+			sourceTree = "<group>";
+		};
+		E81356302085A494008A6927 /* AppDelegate */ = {
+			isa = PBXGroup;
+			children = (
 				E813561820857158008A6927 /* AppDelegate.swift */,
-				E813561A20857158008A6927 /* ViewController.swift */,
-				E813561C20857158008A6927 /* Main.storyboard */,
+			);
+			path = AppDelegate;
+			sourceTree = "<group>";
+		};
+		E81356312085A4C5008A6927 /* Utilities */ = {
+			isa = PBXGroup;
+			children = (
 				E813561F20857158008A6927 /* Assets.xcassets */,
 				E813562120857158008A6927 /* LaunchScreen.storyboard */,
 				E813562420857159008A6927 /* Info.plist */,
 			);
-			path = SwiftCalculator;
+			path = Utilities;
+			sourceTree = "<group>";
+		};
+		E81356362085A5E3008A6927 /* Calculate */ = {
+			isa = PBXGroup;
+			children = (
+				E81356322085A595008A6927 /* CalculatorController.storyboard */,
+				E81356342085A5A2008A6927 /* CalculatorController.swift */,
+			);
+			path = Calculate;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -124,8 +148,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				E813562320857158008A6927 /* LaunchScreen.storyboard in Resources */,
+				E81356332085A595008A6927 /* CalculatorController.storyboard in Resources */,
 				E813562020857158008A6927 /* Assets.xcassets in Resources */,
-				E813561E20857158008A6927 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -136,22 +160,14 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				E813561B20857158008A6927 /* ViewController.swift in Sources */,
 				E813561920857158008A6927 /* AppDelegate.swift in Sources */,
+				E81356352085A5A2008A6927 /* CalculatorController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXVariantGroup section */
-		E813561C20857158008A6927 /* Main.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				E813561D20857158008A6927 /* Base */,
-			);
-			name = Main.storyboard;
-			sourceTree = "<group>";
-		};
 		E813562120857158008A6927 /* LaunchScreen.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
@@ -275,7 +291,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				INFOPLIST_FILE = SwiftCalculator/Info.plist;
+				INFOPLIST_FILE = "$(SRCROOT)/SwiftCalculator/Utilities/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.PDA.SwiftCalculator;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -289,7 +305,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				INFOPLIST_FILE = SwiftCalculator/Info.plist;
+				INFOPLIST_FILE = "$(SRCROOT)/SwiftCalculator/Utilities/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.PDA.SwiftCalculator;
 				PRODUCT_NAME = "$(TARGET_NAME)";
