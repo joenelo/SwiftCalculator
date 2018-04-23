@@ -7,7 +7,7 @@ class CalculatorController: UIViewController {
     var previousNumbers: Double = 0
     var doingMathCalcs = false
     var operation = 0
-    
+ 
     
     // create a clearButton function to clean the TextView
     @IBAction func clearButton(_ sender: UIButton) {
@@ -17,8 +17,9 @@ class CalculatorController: UIViewController {
     
     // Numbers function for all for the Numbered buttons
     @IBAction func numbers(_ sender: UIButton) {
-        // if doing pressing the number buttons set their numbers to the tags -1  and make them Doubles
-        if doingMathCalcs == true {
+        
+        // if pressing the number buttons set their numbers to the tags, -1 and make them Doubles
+        if doingMathCalcs == true  {
             answerTextView.text = String(sender.tag-1)
             currentNumbers = Double(answerTextView.text!)!
             doingMathCalcs = false
@@ -28,6 +29,7 @@ class CalculatorController: UIViewController {
             currentNumbers = Double(answerTextView.text!)!
         }
     }
+    
     // create a function for the Math operator buttons
     @IBAction func mathButtons(_ sender: UIButton) {
         if answerTextView.text != "" && sender.tag != 15 {
@@ -55,25 +57,42 @@ class CalculatorController: UIViewController {
             doingMathCalcs = true
         }
             // create an area to do simple math problems, previously stored numbers plus whats in the textview currently
-        else if sender.tag == 15 {
-            if operation == 11 {
-                answerTextView.text = String(previousNumbers + currentNumbers)
+        else if sender.tag == 15 && answerTextView.text != "Error"{
+            if operation == 11 , answerTextView.text != "Error" {
+                answerTextView.text = ""
+                 do {
+                    self.answerTextView.text = String(self.previousNumbers + self.currentNumbers)
+                }
             }
-            else if operation == 12 {
+            else if operation == 12, answerTextView.text != "Error" {
                 answerTextView.text = String(previousNumbers - currentNumbers)
             }
-            else if operation == 13 {
+            else if operation == 13, answerTextView.text != "Error" {
                 answerTextView.text = String(previousNumbers * currentNumbers)
             }
-            else if operation == 14 {
+            else if operation == 14, answerTextView.text != "Error" {
                 if currentNumbers > 0  {
                     answerTextView.text = String(previousNumbers / currentNumbers)
-            } else {
-                answerTextView.text = String("Error")
-               
-            }
+                } else {
+                    answerTextView.text = String("Error")
+                   showAlertButtonTapped(title: "Error", message: "It is not possible to divide by 0.")
+                }
     
             }
         }
+    }
+    func showAlertButtonTapped(title: String, message: String) {
+        
+        // create the alert
+        let alert = UIAlertController(title: "Error", message: "It is not possible to divide by 0, please select another number.", preferredStyle: UIAlertControllerStyle.alert)
+        
+        // add an action (button)
+        alert.addAction(UIAlertAction(title: "Clear", style: .default, handler: { action in
+            self.answerTextView.text = ""
+        }))
+        
+        // show the alert
+        self.present(alert, animated: true, completion: nil)
+        
     }
 }
