@@ -7,8 +7,8 @@ class CalculatorController: UIViewController {
     var previousNumbers: Double = 0
     var doingMathCalcs = false
     var operation = 0
+    var isThereAnError = false
  
-    
     // create a clearButton function to clean the TextView
     @IBAction func clearButton(_ sender: UIButton) {
         answerTextView.text = ""
@@ -18,6 +18,12 @@ class CalculatorController: UIViewController {
     // Numbers function for all for the Numbered buttons
     @IBAction func numbers(_ sender: UIButton) {
         
+        //  See if if there is an error and set the Answer
+        if isThereAnError == true {
+            answerTextView.text = ""
+            isThereAnError = false
+        }
+        
         // if pressing the number buttons set their numbers to the tags, -1 and make them Doubles
         if doingMathCalcs == true  {
             answerTextView.text = String(sender.tag-1)
@@ -26,7 +32,13 @@ class CalculatorController: UIViewController {
             
         } else {
             answerTextView.text = answerTextView.text! + String(sender.tag-1)
-            currentNumbers = Double(answerTextView.text!)!
+            print(answerTextView.text)
+            if let text = answerTextView.text, let number = Double(text) {
+                currentNumbers = number
+            } else {
+                currentNumbers = 0
+                answerTextView.text = ""
+            }
         }
     }
     
@@ -74,25 +86,10 @@ class CalculatorController: UIViewController {
                 if currentNumbers > 0  {
                     answerTextView.text = String(previousNumbers / currentNumbers)
                 } else {
-                    answerTextView.text = String("Error")
-                   showAlertButtonTapped(title: "Error", message: "It is not possible to divide by 0.")
+                    answerTextView.text = "Error"
+                    isThereAnError = true
                 }
-    
             }
         }
-    }
-    func showAlertButtonTapped(title: String, message: String) {
-        
-        // create the alert
-        let alert = UIAlertController(title: "Error", message: "It is not possible to divide by 0, please select another number.", preferredStyle: UIAlertControllerStyle.alert)
-        
-        // add an action (button)
-        alert.addAction(UIAlertAction(title: "Clear", style: .default, handler: { action in
-            self.answerTextView.text = ""
-        }))
-        
-        // show the alert
-        self.present(alert, animated: true, completion: nil)
-        
     }
 }
